@@ -21,13 +21,13 @@ interface MyTabProps {
   variant?: "line" | "solid";
   defaultIndex?: number;
   showText?: boolean;
-  color: Color;
+  color?: Color;
   args?: any;
 }
 
 //Components
 function MyTab(props: MyTabProps) {
-  const { variant = "line", defaultIndex = 0, showText = true, color = "blue", args } = props;
+  const { variant = "line", defaultIndex = 0, showText = true, color, args } = props;
 
   const tabLabels = ["This is a very Long Tab Value that is used as an edge case", "Three", "One"];
 
@@ -60,7 +60,7 @@ function WithControlledStateTemplate({ ...args }) {
           <Tab>Three</Tab>
         </TabList>
       </TabGroup>
-      <div className="mt-4 space-x-2">
+      <div className="space-x-2 mt-4">
         <Button onClick={() => setIndex(0)}>Reset</Button>
         <Button onClick={() => setIndex(2)}>Three</Button>
         <p>index: {index}</p>
